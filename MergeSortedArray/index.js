@@ -8,7 +8,7 @@
 
 // Iteration
 
-let mergeSortedArray1 = (num1, m, num2, n) => {
+let mergeSortedArray1 = (nums1, m, nums2, n) => {
   if (n === 0) return
   let i = m, j = n, k = m + n
   while (i > 0 && j > 0) {
@@ -25,14 +25,15 @@ let mergeSortedArray1 = (num1, m, num2, n) => {
 
 // Recursive
 
-let mergeSortedArray2 = (num1, n, num2, m) => {
-  let i = n, j = m, k = m + n
-  if (num1[i - 1] > num2[j - 1]) {
-    num1[k - 1] = num1[i - 1]
-    mergeSortedArray2(num1, --i, num2, j)
+let mergeSortedArray2 = (nums1, n, nums2, m) => {
+  if (n === 0) return 
+  let i = m, j = n, k = m + n
+  if (nums1[i - 1] > nums2[j - 1]) {
+    nums1[k - 1] = nums1[i - 1]
+    merge(nums1, --i, nums2, j)
   } else {
-    num1[k - 1] = num2[j - 1]
-    mergeSortedArray2(num1, i, num2, --j)
+    nums1[k - 1] = nums2[j - 1]
+    merge(nums1, i, nums2, --j)
   }
 }
 
