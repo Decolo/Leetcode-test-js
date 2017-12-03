@@ -8,17 +8,18 @@
 
 // Iteration
 
-let mergeSortedArray1 = (num1, n, num2, m) => {
-  let i = n, j = m, k = m + n
+let mergeSortedArray1 = (num1, m, num2, n) => {
+  if (n === 0) return
+  let i = m, j = n, k = m + n
   while (i > 0 && j > 0) {
-    if (num1[i - 1] > num2[j - 1]) {
-      num1[k--] = num1[i--]
+    if (nums1[i - 1] > nums2[j - 1]) {
+      nums1[--k] = nums1[--i]
     } else {
-      num1[k--] = num2[j--]
+      nums1[--k] = nums2[--j]
     }
   }
   while (j > 0) {
-    num1[k--] = num2[j--]
+    nums1[--k] = nums2[--j]
   }
 }
 
