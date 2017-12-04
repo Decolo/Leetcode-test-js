@@ -7,7 +7,6 @@
  */
 
 // Iteration
-
 let mergeSortedArray1 = (nums1, m, nums2, n) => {
   if (n === 0) return
   let i = m, j = n, k = m + n
@@ -24,7 +23,6 @@ let mergeSortedArray1 = (nums1, m, nums2, n) => {
 }
 
 // Recursive
-
 let mergeSortedArray2 = (nums1, n, nums2, m) => {
   if (n === 0) return 
   let i = m, j = n, k = m + n
