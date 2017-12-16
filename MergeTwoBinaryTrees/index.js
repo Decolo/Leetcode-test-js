@@ -46,11 +46,24 @@ let createTree = (arr) => {
 
 // merge the values of t2 and t1 to obtain a new tree（得到一个新树)
 // iteration
-
+let mergeToNewTree1 = (t1, t2) => {
+  if (t1 === null && t2 !== null) {
+    return new TreeNode(t2.val)
+  } else if (t1 !== null && t2 === null) {
+    return new TreeNode(t1.val)
+  } else if (t1 !== null && t2 !== null) {
+    let node = new TreeNode(t1.val + t2.val)
+    node.left = mergeToNewTree1(t1.left, t2.left)
+    node.right = mergeToNewTree1(t1.right, t2.right)
+    return node
+  } else {
+    return null
+  }
+}
 
 
 // recursion 
-let mergeToNewTree = (t1, t2) => {
+let mergeToNewTree2 = (t1, t2) => {
   let queue = [[t1, t2]], tempArr, arr = []
   while (queue.length !== 0) {
     tempArr = queue.shift()
