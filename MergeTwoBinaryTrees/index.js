@@ -101,26 +101,35 @@ let mergeTrees2 = (t1, t2) => {
 
 // Example 
 
-let createTree = (arr) => {
-  let queue1 = [...arr]
-  let head  = new TreeNode(queue1.shift())
-  let queue2 = [head]
-  let temp1, temp2
-  while(true) {
-    temp2 = queue2.shift() 
+// let createTree = (arr) => {
+//   let queue1 = [...arr]
+//   let head  = new TreeNode(queue1.shift())
+//   let queue2 = [head]
+//   let temp1, temp2
+//   while(true) {
+//     temp2 = queue2.shift()
+//     if (temp2 === null) {
+//       queue1.shift()
+//       queue1.shift()
+//       continue
+//     }
 
-    temp1 = queue1.shift()
-    if (temp1 !== null) {
-      temp2.left = new TreeNode(temp1)
-      queue2.push(temp2.left)
-    }
-    if (queue1.length === 0) return head
+//     temp1 = queue1.shift()
+//     if (temp1 !== null) {
+//       temp2.left = new TreeNode(temp1)
+//       queue2.push(temp2.left)
+//     } else {
+//       queue2.push(null)
+//     }
+//     if (queue1.length === 0) return head
 
-    temp1 = queue1.shift()
-    if (temp1 !== null) {
-      temp2.right = new TreeNode(temp1)
-      queue2.push(temp2.right)
-    }
-    if (queue1.length === 0) return head
-  }
-}
+//     temp1 = queue1.shift()
+//     if (temp1 !== null) {
+//       temp2.right = new TreeNode(temp1)
+//       queue2.push(temp2.right)
+//     } else {
+//       queue2.push(null)
+//     }
+//     if (queue1.length === 0) return head
+//   }
+// }
